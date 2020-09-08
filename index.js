@@ -54,7 +54,6 @@ const getParentIndex = (heap, index) => {
   if (index === 0) {
     return null
   }
-  // return (index >> 1) - 1
   return Math.floor((index - 1) * 0.5)
 }
 

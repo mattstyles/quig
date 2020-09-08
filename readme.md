@@ -8,6 +8,8 @@
 [![License](https://img.shields.io/github/license/mattstyles/quig.svg)](https://github.com/mattstyles/quig/blob/main/license.md)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
+For alternate solutions see [Heapify](https://www.npmjs.com/package/heapify), [TinyQueue](https://www.npmjs.com/package/tinyqueue), and [FlatQueue](https://www.npmjs.com/package/flatqueue).
+
 ## Getting Started
 
 ```sh
@@ -55,6 +57,19 @@ const heap = Heap.of({
 ```
 
 The comparator will be furnished with two nodes to compare and is expected to return a boolean denoting their priority i.e. returning true from the comparator will bubble the node to the head of the heap.
+
+Heap can accept any sort of data (for faster implementations using integers see [Heapify](https://www.npmjs.com/package/heapify)).
+
+```js
+const heap = Heap.of({
+  comparator: (a, b) => a.cost < b.cost
+})
+
+heap.push({ node: node, cost: 10 })
+heap.push({ node: node, cost: 5 })
+
+heap.pop() // { node: node, cost: 5 }
+```
 
 ## Running tests
 
