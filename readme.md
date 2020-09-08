@@ -24,6 +24,7 @@ const heap = Heap.of()
 heap.push(3)
 heap.push(5)
 heap.push(1)
+heap.peek() // 1
 heap.pop() // 1
 heap.pop() // 3
 heap.pop() // 5

@@ -55,3 +55,13 @@ tape('Heap can be initialised with values', t => {
     'Constructor pushes values to the heap'
   )
 })
+
+tape('Peek can be used to get the highest priority item', t => {
+  t.plan(3)
+  const heap = Heap.of({
+    data: [4, 1, 3, 10]
+  })
+  t.equal(heap.length, 4, '4 items')
+  t.equal(heap.peek(), 1, 'Peek is not mutative')
+  t.equal(heap.length, 4, '4 items')
+})
