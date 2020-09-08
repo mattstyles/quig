@@ -1,0 +1,67 @@
+{
+  "name": "quig",
+  "version": "1.0.0",
+  "description": "Quick and dirty heap implementation",
+  "main": "lib/quig.js",
+  "module": "lib/quig.esm.js",
+  "jsnext:main": "lib/quig.esm.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "prebuild": "rimraf lib",
+    "build": "NODE_ENV=production rollup -c",
+    "watch": "rollup -c -w",
+    "presize": "npm run build",
+    "size": "size-limit",
+    "prepublish": "npm run size",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "heap",
+    "queue",
+    "priority"
+  ],
+  "size-limit": [
+    {
+      "path": "lib/quig.esm.js",
+      "limit": "4 KB"
+    }
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "standard"
+    ]
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "ignore": [
+      "**/node_modules/**",
+      "**/lib/",
+      "**/dist/"
+    ]
+  },
+  "author": "Matt Styles",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/register": "^7.11.5",
+    "@rollup/plugin-babel": "^5.2.0",
+    "@size-limit/preset-small-lib": "^4.6.0",
+    "babel-eslint": "^10.1.0",
+    "husky": "^4.3.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.26.11",
+    "rollup-plugin-terser": "^7.0.2",
+    "size-limit": "^4.6.0",
+    "standard": "^14.3.4",
+    "tape": "^5.0.1"
+  }
+}
