@@ -66,10 +66,10 @@ const heap = Heap.of({
   comparator: (a, b) => a.cost < b.cost
 })
 
-heap.push({ node: node, cost: 10 })
-heap.push({ node: node, cost: 5 })
+heap.push({ path: path, cost: 10 })
+heap.push({ path: path, cost: 5 })
 
-heap.pop() // { node: node, cost: 5 }
+heap.pop() // { path: path, cost: 5 }
 ```
 
 ## Running tests

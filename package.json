@@ -48,6 +48,7 @@
     ]
   },
   "author": "Matt Styles",
+  "repository": "mattstyles/quig",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.11.6",
