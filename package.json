@@ -1,6 +1,6 @@
 {
   "name": "quig",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Quick and dirty heap implementation",
   "main": "lib/quig.js",
   "module": "lib/quig.esm.js",
