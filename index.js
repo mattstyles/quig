@@ -59,7 +59,7 @@ const getParentIndex = (heap, index) => {
 
 const getChildIndices = (heap, index) => {
   const l = (index << 1) + 1
-  const r = (index + 1) << 1
+  const r = l + 1
   return [
     l < heap.length ? l : null,
     r < heap.length ? r : null
